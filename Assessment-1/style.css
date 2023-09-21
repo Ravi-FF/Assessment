@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(60deg, #09203F, #537895);
+}
+
+.container {
+    border-radius: 8px;
+    padding: 15px 50px;
+    width: 70%;
+    height: 600px;
+    background-color: lightblue;
+    border: 2px solid white;
+}
+
+.contect {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.address-section,
+.form-section {
+    background-color: antiquewhite;
+
+}
+
+.address-wrapper {
+    width: 70%;
+    padding: 20px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.address-wrapper p,
+.one {
+    line-height: 22px;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+.right-part {
+    line-height: 50px;
+}
+
+.one span i {
+    margin-right: 10px;
+}
+
+.address-text {
+    margin-bottom: 20px;
+}
+
+.phone {
+    color: crimson;
+}
+
+.message {
+    color: darkturquoise;
+}
+
+.location i {
+    font-size: 30px;
+    color: crimson;
+}
+
+.form-map-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.form-wrapper {
+    flex-basis: 50%;
+}
+
+.map {
+    flex-basis: 50%;
+}
+
+iframe {
+    width: 100%;
+    height: 275px;
+}
+
+input {
+    width: 45%;
+    padding: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-right: 10px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 15px;
+}
+
+textarea {
+    outline: none;
+    width: 94%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    height: 100px;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: crimson;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.icon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.icon span {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.icon span:hover {
+    opacity: 0.8;
+}
+
+.icon .facebook {
+    background-color: #1877F2;
+    padding: 10px 13px;
+}
+
+.icon .twitter {
+    background-color: #08a0e9;
+}
+
+.icon .linkedin {
+    background-color: #0072b1;
+}
+
+.icon .github {
+    background-color: #171515;
+}
+
+@media screen and (max-width:992px) {
+    body {
+        height: auto;
+    }
+
+    .container {
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .form-wrapper {
+        flex-basis: 100%;
+    }
+
+    .map {
+        flex-basis: 100%;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .icon {
+        justify-content: center;
+    }
+
+    .left-part {
+        margin: 10px 0;
+    }
+
+    .address-wrapper {
+        text-align: center;
+        width: 100%;
+        display: block;
+
+    }
+}
