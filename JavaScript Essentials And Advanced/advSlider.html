@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Slider JavaScript</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+
+    }
+
+    .img-box {
+        width: 75%;
+        background-color: white;
+        border-radius: 10px;
+        height: 95vh;
+        overflow: auto;
+        box-shadow: 0 0 8px gray;
+    }
+
+    .main-img {
+        padding: 10px;
+        width: 100%;
+        height: calc(95vh - 100px);
+    }
+
+    .main-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .slider-img {
+        display: flex;
+        overflow: hidden;
+        gap: 10px;
+        height: 100px;
+    }
+
+    .slider-img img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+    }
+
+    .img-border {
+        transform: scale(1.02);
+    }
+
+    .shade {
+        opacity: 0.8;
+    }
+</style>
+
+<body>
+    <div class="img-box">
+        <div class="main-img">
+            <img src="" alt="image" id="main-img">
+            <div class="slider-img">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // create image url with the help of created element 
+    let createdImgsrc = () => {
+        let imagesrc = ["./img/gallery-img-2.png", "./img/gallery-img-3.png", "./img/gallery-img-4.png", "./img/gallery-img-5.png", "./img/gallery-img-1.png"];
+        for (let i = 0; i < imagesrc.length; i++) {
+            let srcs = imagesrc[i]
+            let createImg = document.createElement("img");
+            createImg.src = srcs;
+            createImg.classList.add('thumbnail')
+            document.querySelector(".slider-img").appendChild(createImg);
+            createImg.onclick = () => {
+                changeImage(createImg)
+            }
+        }
+    }
+    createdImgsrc();
+    
+    let changeImage = (changeImg) => {
+        document.querySelector("#main-img").src = changeImg.src;
+        selectedImg(changeImg)
+    }
+
+    let selectedImg = (selectedImage) => {
+        let allImg = document.querySelectorAll(".thumbnail")
+        for (let i = 0; i < allImg.length; i++) {
+            allImg[i].classList.remove('img-border');
+            allImg[i].classList.add('shade');
+        }
+        selectedImage.classList.add('img-border')
+        selectedImage.classList.remove('shade')
+    }
+
+    // first image show 
+    changeImage(document.querySelector(".thumbnail"))
+</script>
+
+</html>
